@@ -9,7 +9,19 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build:local": "npm run build:local:native && npm run build:web",
+    "build:local:native": "eas build --local --platform all --profile local",
+    "build:local:ios": "eas build --local --platform ios --profile local",
+    "build:local:android": "eas build --local --platform android --profile local",
+    "build:cloud": "npm run build:cloud:native && npm run build:web",
+    "build:cloud:native": "eas build --platform all --profile development-cloud",
+    "build:cloud:ios": "eas build --platform ios --profile development-cloud",
+    "build:cloud:android": "eas build --platform android --profile development-cloud",
+    "build:web": "npx expo export:web",
+    "build:preview": "eas build --platform all --profile preview",
+    "dev:all": "expo start --web --android --ios",
+    "clean": "rm -rf dist/ android/ ios/ web-build/"
   },
   "jest": {
     "preset": "jest-expo"
@@ -40,13 +52,15 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "expo-image": "~2.0.6",
-    "expo-image-picker": "~16.0.6"
+    "expo-image-picker": "~16.0.6",
+    "expo-dev-client": "~5.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.3.12",
     "@types/react-test-renderer": "^18.3.0",
+    "eas-cli": "^15.0.14",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.4",
     "react-test-renderer": "18.3.1",
