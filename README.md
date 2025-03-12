@@ -1,50 +1,203 @@
-# Welcome to your Expo app 👋
+# ExpoLearn
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A sandbox repository for Expo/React Native development.
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+-   Node.js
+-   Xcode (for iOS development)
+-   Android Studio (for Android development)
+-   An Expo account (https://expo.dev/signup)
 
-   ```bash
-   npm install
-   ```
+## Setup
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. **Install Dependencies**
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Configure Your Environment**
 
-## Learn more
+```bash
+# Login to your Expo account
+npx eas login
 
-To learn more about developing your project with Expo, look at the following resources:
+# Create your app configuration
+cp example.app.json app.json
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Initialize your Expo project
+npx eas init
+```
 
-## Join the community
+3. **Start Development**
 
-Join our community of developers creating universal apps.
+```bash
+# Make sure Android Emulator/iOS Simulator is running first
+npm run dev:all
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Development Commands
+
+### Local Development
+
+```bash
+npm run dev:all      # All platforms
+npm run ios         # iOS only
+npm run android     # Android only
+npm run web         # Web only
+```
+
+### Building
+
+```bash
+# Local Development Builds
+npm run build:local         # All platforms
+npm run build:local:ios    # iOS only
+npm run build:local:android # Android only
+
+# Cloud Builds (EAS)
+npm run build:cloud
+```
+
+### Utility Commands
+
+```bash
+npm run clean  # Clean build artifacts
+```
+
+## Development Workflow
+
+This repository is set up to allow independent development:
+
+-   Each developer uses their own Expo account
+-   Individual project IDs and build histories
+-   No shared credentials required
+-   Builds can be tested without affecting others
+
+### First Time Setup Flow
+
+1. Create your Expo account at https://expo.dev/signup
+2. Clone this repository
+3. Follow the setup steps above
+4. When running `eas init`:
+    - A new project ID will be created for you
+    - This ID is stored in your local `app.json`
+    - Your `app.json` is gitignored to prevent conflicts
+
+## Important Notes
+
+-   Each developer should use their own Expo account
+-   First time setup requires creating development builds
+-   Run simulators/emulators before starting development
+-   The `app.json` file is gitignored - use `example.app.json` as template
+
+## Troubleshooting
+
+1. **No Development Build Found**
+
+    - Run `npm run build:local` first
+    - Then start development server
+
+2. **Android/iOS Simulator Issues**
+    - Ensure simulator is running before starting dev server
+    - Use platform-specific commands if needed
+      Let me create a final, clean version of the README that focuses on your team's workflow with individual Expo accounts:
+
+Proposed edit:
+README.md
++69
+-36
+15
+Apply
+
+# ExpoLearn
+
+A starter repository for Expo/React Native development. Each developer can work independently with their own Expo account.
+
+## Prerequisites
+
+-   Node.js
+-   Xcode (for iOS development)
+-   Android Studio (for Android development)
+-   An Expo account (https://expo.dev/signup)
+
+## First Time Setup
+
+1. **Clone & Install**
+
+```bash
+git clone
+cd ExpoLearn
+npm install
+```
+
+2. **Configure Your Project**
+
+```bash
+# Login with your Expo account
+npx eas login
+
+# Create your app configuration
+cp example.app.json app.json
+
+# Initialize your own project
+npx eas init
+```
+
+3. **Create Development Build**
+
+```bash
+# Create local development build (required for first time setup)
+npm run build:local
+
+# Start development server
+npm run dev:all
+```
+
+## Development Commands
+
+### Daily Development
+
+```bash
+npm run dev:all    # All platforms
+npm run ios        # iOS only
+npm run android    # Android only
+npm run web        # Web only
+```
+
+### Building
+
+```bash
+# Local Development Builds
+npm run build:local         # All platforms
+npm run build:local:ios    # iOS only
+npm run build:local:android # Android only
+
+# Cloud Builds
+npm run build:cloud        # Build for production using EAS
+```
+
+### Utility
+
+```bash
+npm run clean     # Clean build artifacts
+```
+
+## Important Notes
+
+-   Each developer uses their own Expo account
+-   Your `app.json` is gitignored to prevent conflicts
+-   Run Android emulator/iOS simulator before development
+-   First-time setup requires creating development builds
+
+## Troubleshooting
+
+1. **No Development Build Found**
+
+    - Run `npm run build:local` first
+    - Then start development server
+
+2. **Android/iOS Simulator Issues**
+    - Start simulator before running dev commands
+    - Use platform-specific commands if needed

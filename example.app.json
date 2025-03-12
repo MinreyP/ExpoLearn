@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "StickerSmash",
-    "slug": "StickerSmash",
+    "name": "ExpoLearn",
+    "slug": "expo-learn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "expolearn",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nekov2.starterpack",
+      "bundleIdentifier": "fi.perp.expolearn",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -20,7 +20,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.nekov2.starterpack"
+      "package": "fi.perp.expolearn"
     },
     "web": {
       "bundler": "metro",
@@ -45,11 +45,7 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "bb1fba29-30e1-4b78-b9f0-091ed7c9324b"
       }
-    },
-    "owner": "minrey"
+    }
   }
 }
