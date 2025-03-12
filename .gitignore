@@ -65,3 +65,6 @@ xcuserdata/
 
 expo-env.d.ts
 # @end expo-cli
+
+# Project Config
+app.json
