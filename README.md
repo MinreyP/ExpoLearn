@@ -10,6 +10,7 @@ A sandbox repository for exercise Expo/React Native development workflow.
 
 ## Strongly recommend you to install
 -    Expo Orbit: a device management app by Expo for better developer experience (https://expo.dev/orbit)
+<img src="https://expo.dev/static/orbit/orbit-screen.png" alt="drawing" width="600" />
 
 ## First Time Setup
 
